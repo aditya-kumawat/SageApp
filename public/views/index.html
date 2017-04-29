@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="SageApp">
+<head>
+	<base href="/">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sage Application</title>
+
+	<!-- css goes here -->
+	<link rel="stylesheet" href="css/materialize.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- Icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<!-- scripts goes here -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/materialize.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-ui-router.js"></script>
+	
+	<!-- services goes here -->
+	<script src="../services/userService.js"></script>
+	<script src="../services/messageService.js"></script>
+
+	<!-- controllers goes here -->
+	<script src="../controllers/homeCtrl.js"></script>
+	<script src="../controllers/loginCtrl.js"></script>
+
+	<!-- application state routing -->
+	<script src="../app-routes.js"></script>
+
+	<!-- the main controller -->
+	<script src="../app.js"></script>
+</head>
+<body>
+<body class="row">
+
+	<!-- Top shelf -->
+	<div id="topbar-container" class="row indigo darken-4">
+		<div id="topbar">
+			<p class="brand-logo"><a ui-sref="home" class="brand-logo">Sage Application</a></p>
+		</div>
+	</div>
+
+	<!-- Main Content -->
+	<div class="row">
+		<div ui-view>
+			
+		</div>
+	</div>		
+
+</body>
+</html>

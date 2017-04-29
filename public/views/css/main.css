@@ -1,0 +1,402 @@
+@font-face{
+	font-family: "Pacifico";
+	src: url("../fonts/Pacifico.ttf");
+}
+
+*{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+body{
+	min-height: 100vh;
+	/*bluish colour*/
+	/*background: #1C438A;*/
+	background: #f5f5f5;
+	padding-top: 64px !important;
+}
+
+/*form input colour styles*/
+form textarea.materialize-textarea{
+	padding-top: 15px !important;
+}
+
+form textarea.materialize-textarea:focus:not([readonly]),
+form input:focus:not([readonly]){
+	border-bottom: 1px solid #1a237e !important;
+	box-shadow: 0 1px 0 0 #1a237e !important;
+}
+
+form textarea.materialize-textarea:focus:not([readonly]) + label,
+form input:focus:not([readonly]) + label{
+	color: #1a237e !important;
+}
+
+
+/*------------------------------------------------------------
+	Top bar
+------------------------------------------------------------*/
+	/*a container/wrapper for the topbar*/
+	/*background: #1a237e;*/
+	#topbar-container.row{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		width: 100%;
+		height: 64px;
+		max-height: ;
+		line-height: 64px;
+	}
+
+	#topbar{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		height: 100%;
+		line-height: inherit;
+	}
+
+	/*height and line-height is whatever set in the parent*/
+	#topbar > a,
+	#topbar > p{
+		display: block;
+		background: transparent;
+		box-shadow: none;
+		height: 100%;
+		line-height: inherit;
+	}
+
+	#topbar > p{
+		width: 100%;
+		text-align: center;
+	}
+
+	/*only the buttons on the left and the right have a fixed width*/
+	#topbar a.btn{
+		width: 64px;
+	}
+
+	#topbar a.btn > i{
+		display: inherit;
+		align-items: center;
+		width: auto;
+	}
+
+	#topbar a.brand-logo{
+		color: white;
+		flex-grow: 2;
+		text-align: center;
+		/*text-indent: -64px;*/
+		/*text-transform: uppercase;*/
+		font-family: "Pacifico";
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+/*------------------------------------------------------------
+	Topbar ends here
+------------------------------------------------------------*/
+
+/*------------------------------------------------------------
+	Login route starts here
+------------------------------------------------------------*/
+	#login{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: calc(100vh - 66px);
+		padding: 30px 0 !important; 
+	}
+
+	#login > form{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		min-height: 370px;
+		min-width: 350px;
+		max-width: 450px;
+	}
+
+	#login > form > *{
+		margin: 35px 0 0 0 !important;
+	}
+
+	#login > form > p{
+		font-family: "Pacifico";
+		font-size: 1.8em;
+		font-weight: bold;
+		letter-spacing: 2px;
+	}
+
+	#login > form > button{
+		margin: 35px 0 40px 0 !important;
+	}
+/*------------------------------------------------------------
+	Login route ends here
+------------------------------------------------------------*/
+
+/*------------------------------------------------------------
+	Home route starts here. 
+------------------------------------------------------------*/
+	#page-title{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 45vh;
+	}
+
+	#page-title > p{
+		width: 100%;
+		font-size: 3.5em;
+		text-indent: 10vw;
+		font-weight: bold;
+		color: white;
+		font-family: "Pacifico";
+	}
+
+	a#logout{
+		position: fixed;
+		top: 5px;
+		right: 5px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		z-index: 100;
+		font-weight: bold;
+	}
+
+	a#logout > i{
+		margin-right: 5px !important;
+	}
+
+	a#send-message{
+		position: absolute;
+		top: calc(45vh + 64px);
+		right: 3vw;
+		transform: translateY(-50%);
+	}
+
+	#no-messages{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		min-height: calc(100vh - 45vh - 80px);
+		font-size: 2em;
+		color: grey;
+	}
+
+	#display-messages{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: auto;
+	}
+
+	#display-messages a.btn-verify,
+	#display-messages a.btn-simulate{
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		padding: 7px !important;
+		line-height: 175%;
+	}
+	
+	#display-messages a.btn-simulate{
+		right: 100px;
+	}
+
+	#display-messages .message-overview{
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		height: auto;
+		min-height: 200px;
+		margin-top: 8vh !important;
+		padding-left: 2.5% !important;
+		padding-right: 2.5% !important;
+	}
+
+	#display-messages .message-overview:last-child{
+		margin-bottom: 8vh !important;
+	}
+
+	/*message details*/
+	.message-overview > .message-details{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		flex-grow: 2;
+		width: 100%;
+		height: auto;
+	}
+
+	.message-details > *{
+		display: block;
+		width: 100%;
+		padding: 1% 0 1% 2% !important
+	}
+
+	.message-details > .divider{
+		margin: 1% 0 !important;
+		padding: 0 !important;
+	}
+
+	.message-details > .message-brief{
+		font-weight: bold;
+		font-size: 1.1em;
+		padding-right: 90px !important;
+		margin-top: 2% !important;
+	}
+
+	.message-details > .message-sent-stats{
+		align-self: flex-end;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		margin-bottom: 2% !important;
+	}
+
+	.message-sent-stats > p{
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: flex-end;
+	}
+
+	/*Modals css starts here*/
+	.modal{	
+		width: 55vw;
+		height: auto;
+		max-height: 70vh;		
+		top: calc(50vh) !important;
+		left: calc((100vw - 55vw)/2);
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		overflow: hidden;
+		padding-bottom: 80px !important;
+		transform: translateY(-50%);
+	}
+
+	.modal-content{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		overflow: auto;
+		padding: 4vh 4vw 1vh 4vw !important;
+	}
+
+	.modal-content h4{
+		text-align: center;
+		/*margin-bottom: 2vh !important;*/
+	}
+
+	.modal-content p{
+		text-align: center;
+	}
+
+	#Send-message-modal{
+		min-height: 90vh;
+	}
+
+	#Send-message-modal .modal-content{
+		min-height: 90vh;
+		width: 100%;
+	}
+
+	#Send-message-modal .divider{
+		margin: 10px 0 !important;
+	}
+
+	#Verification-result-modal{
+		left: calc((100vw - 35vw)/2);
+		width: 40vw;
+		height: 15vh;
+		padding: 0 !important;
+	}
+
+	#Verification-result-modal .modal-content{
+		width: 100%;
+		height: 100%;
+		justify-content: center;
+		padding: 0 !important;
+	}
+
+	#Verification-result-modal .modal-content h4{
+		font-size: 1.3em;
+		text-align: center;
+	}	
+
+	.progress{
+		width: 200px;
+		height: 4px;
+	}
+
+	@media(max-width: 700px){
+		.modal{	
+			width: 90%;
+			left: calc(10%/2);
+		}
+		
+		#Verification-result-modal{
+			width: 300px;
+			left: calc((100% - 300px)/2);
+		}
+	}
+/*------------------------------------------------------------
+	Home route ends here
+------------------------------------------------------------*/
+
+/*------------------------------------------------------------
+	Create post route starts here
+------------------------------------------------------------*/
+	#Send-message-modal form{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 6vh 0 !important;
+	}
+
+	#Send-message-modal form > *{
+		margin-top: 5vh !important;
+	}
+
+	#Send-message-modal form .materialize-textarea{
+		min-height: 150px;
+		margin-top: 6vh !important;
+	}
+
+	#Send-message-modal form > p{
+		font-family: "Pacifico";
+		font-size: 1.8em;
+		letter-spacing: 2px;
+		font-weight: bold;
+	}
+
+	#Send-message-modal form > *:last-child{
+		margin-bottom: 3vh !important;
+	}
+
+	#Send-message-modal form > button{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		height: auto;
+		padding: 3px 15px !important;
+	}
+/*------------------------------------------------------------
+	Create post route ends here
+------------------------------------------------------------*/

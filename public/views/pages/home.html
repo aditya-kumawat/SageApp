@@ -1,0 +1,53 @@
+<div class="row indigo darken-1" id="page-title">
+	<p>#Messages</p>
+</div>
+<a class="btn btn-large z-depth-0 waves-effect waves-light transparent" id="logout" ng-click="home.logout()"> 
+	<i class="material-icons prefix">power_settings_new</i>Logout
+</a>
+<a class="btn-floating btn-large waves-effect waves-light red" id="send-message" data-target="Send-message-modal"> 
+	<i class="material-icons hoverable">add</i>
+</a>
+<div class="row" id="display-messages">
+	<!-- List of messages received. -->
+	<div class="col m9 s11" ng-show="home.noMessages" id="no-messages">
+		<i class="material-icons medium">info_outline</i>No Messages Received
+	</div>
+	<div class="card-panel hoverable col m9 s11 message-overview" ng-repeat="message in home.messages">
+		<a class="btn waves-effect waves-light indigo darken-4 btn-verify" data-target="Verification-result-modal" ng-click="home.verify(message.body)">Verify</a>
+		<a class="btn waves-effect waves-light indigo darken-4 btn-simulate" data-target="Verification-result-modal" ng-click="home.simulate(message.body)">Simulate MITM</a>
+		<div class="message-details">
+			<p class="message-brief">{{ message.body }}</p>
+			<div class="divider"></div>
+			<div class="message-sent-stats">
+				<p class="sender-name">Sent by {{ message.sender }} &nbsp; <i class="material-icons tiny">date_range</i> &nbsp; at :&nbsp;{{ message.time}}</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="Send-message-modal" class="modal">
+	<div class="modal-content">
+		<form class="col s12" id="send-message-form" ng-submit="home.sendMessage()">
+			<p class="indigo-text text-darken-4">What have you got today?</p>
+			<div class="divider col s10 indigo darken-4"></div>
+			<div class="input-field col s10">
+				<input type="text" name="message-title" id="message-title" ng-model="home.message.receiver" required>
+				<label for="message-title">Who the lucky person?</label>
+			</div>
+			<div class="input-field col s10">
+				<textarea id="comment-input" class="materialize-textarea" ng-model="home.message.body" required></textarea>
+				<label for="comment-input">Content :  </label>
+			</div>
+			<button class="btn waves-effect waves-light indigo darken-4">Submit<i class="material-icons right">send</i></button>
+		</form>
+	</div>
+</div>
+
+<div id="Verification-result-modal" class="modal">
+	<div class="modal-content">
+		<div class="progress" ng-show="home.verificationResult == 'Pending'">
+			<div class="indeterminate"></div>
+		</div>
+		<h4 ng-hide="home.verificationResult == 'Pending'"> {{ home.verificationResult }} </h4>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<div class="col s12" id="login">
+	<form class="card-panel white col s7 m4" ng-submit="login.register()">
+		<p class="indigo-text text-darken-4">Let's start from here</p>
+		<div class="divider col s8 indigo darken-4"></div>
+		<div class="col s8 input-field">
+			<label for="">Username</label>
+			<input type="text" name="username" id="username" ng-model="login.user.username" required>
+		</div>
+		<div class="col s8 input-field">
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password" ng-model="login.user.password" required>
+		</div>
+		<button class="col s4 btn waves-effect waves-light indigo darken-4">Log In</button>
+	</form>
+</div>
